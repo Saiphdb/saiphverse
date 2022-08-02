@@ -1,0 +1,259 @@
+
+
+* {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --tam_pad: 100px;
+
+    --orb_1: 300px;
+    --plan_1: 30px;
+    --vel_1: 15s;
+    --dir_1: girar-direita;
+
+    --orb_2: 500px;
+    --plan_2: 40px;
+    --vel_2: 25s;
+    --dir_2: girar-esquerda;
+
+    --orb_3: 800px;
+    --plan_3: 60px;
+    --vel_3: 50s;
+    --dir_3: girar-direita;
+
+    --orb_4: 1200px;
+    --plan_4: 100px;
+    --vel_4: 50s;
+    --dir_4: girar-esquerda;
+
+  }
+
+
+
+body{
+
+    background-color: rgb(39, 39, 39);
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+#sol{
+    background-color: rgb(0, 173, 116);
+    height: 80px;
+    width: 80px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+
+    border-radius: 50%;
+
+
+}
+
+#sol:hover{
+    background-color: rgb(0, 255, 170);
+    height: 160px;
+    width: 160px;
+    left: 50%;
+    top: 50%;
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+.tutu{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+.orbg {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px rgb(39, 94, 75);
+    border-style: solid;
+}
+
+.orb1{
+    height: var(--orb_1);
+    width: var(--orb_1);
+}
+
+.orb2{
+    height: var(--orb_2);
+    width: var(--orb_2);
+}
+
+.orb3{
+    height: var(--orb_3);
+    width: var(--orb_3);
+}
+
+
+.orb4{
+    height: var(--orb_4);
+    width: var(--orb_4);
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+@keyframes girar-direita{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+@keyframes girar-esquerda{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+#twitter{
+    height: 70%; 
+    width: 70%; 
+    object-fit: contain
+}
+
+/* =============================================== */
+/* =============================================== */
+
+
+
+.girg{
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    height: 0.5px;
+    width: 0.5px;
+    background-color: chartreuse;
+}
+
+.girg:hover{
+    animation-play-state: paused;
+}
+
+.plang{
+    position: fixed;
+
+    background-color: rgb(0, 255, 179);
+    border-radius: 50%;
+
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* =============================================== */
+/* =============================================== */
+
+
+.gir1{
+    animation: var(--dir_1) var(--vel_1) linear infinite;
+}
+
+.gir2{
+    animation: var(--dir_2) var(--vel_2) linear infinite;
+}
+
+.gir3{
+    animation: var(--dir_3) var(--vel_3) linear infinite;
+}
+
+.gir4{
+    animation: var(--dir_4) var(--vel_4) linear infinite;
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+.plan1 {
+    height: var(--plan_1);
+    width: var(--plan_1);
+    left: calc(var(--orb_1)/2 - var(--plan_1)/2);
+}
+
+.plan2 {
+    height: var(--plan_2);
+    width: var(--plan_2);
+    left: calc(var(--orb_2)/2 - var(--plan_2)/2);
+}
+
+.plan3 {
+    height: var(--plan_3);
+    width: var(--plan_3);
+    left: calc(var(--orb_3)/2 - var(--plan_3)/2);
+}
+
+.plan4 {
+    height: var(--plan_4);
+    width: var(--plan_4);
+    left: calc(var(--orb_4)/2 - var(--plan_4)/2);
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+.gir1:hover .plan1{
+    width: var(--tam_pad);
+    height: var(--tam_pad);
+    left: calc(var(--orb_1)/2 - var(--tam_pad)/2);
+}
+
+
+.gir2:hover .plan2{
+    width: var(--tam_pad);
+    height: var(--tam_pad);
+    left: calc(var(--orb_2)/2 - var(--tam_pad)/2);
+}
+
+.gir3:hover .plan3{
+    width: var(--tam_pad);
+    height: var(--tam_pad);
+    left: calc(var(--orb_3)/2 - var(--tam_pad)/2);
+}
+
+.gir3:hover .plan4{
+    width: var(--tam_pad);
+    height: var(--tam_pad);
+    left: calc(var(--orb_4)/2 - var(--tam_pad)/2);
+}
