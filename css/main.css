@@ -1,0 +1,470 @@
+* {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --tam_pad: 100px;
+  --orb_1: 185px;
+  --plan_1: 25px;
+  --vel_1: 4s;
+  --dir_1: girar-direita;
+  --dire_1: girar-esquerda;
+  --gran_1: 70px;
+  --orb_2: 270px;
+  --plan_2: 40px;
+  --vel_2: 25s;
+  --dir_2: girar-esquerda;
+  --dire_2: girar-direita;
+  --gran_2: 100px;
+  --orb_3: 650px;
+  --plan_3: 60px;
+  --vel_3: 60s;
+  --dir_3: girar-direita;
+  --dire_1: girar-esquerda;
+  --gran_3: 100px;
+  --orb_4: 1400px;
+  --plan_4: 40px;
+  --vel_4: 120s;
+  --dir_4: girar-esquerda;
+  --dire_4: girar-direita;
+  --gran_4: 110px;
+  --orb_5: 180px;
+  --plan_5: 20px;
+  --vel_5: 40s;
+  --dir_5: girar-esquerda;
+  --dire_5: girar-direita;
+  --gran_5: 70px;
+  --orb_6: 230px;
+  --plan_6: 15px;
+  --vel_6: 25s;
+  --dir_6: girar-esquerda;
+  --dire_6: girar-direita;
+  --gran_6: 70px;
+  --orb_7: 150px;
+  --plan_7: 20px;
+  --vel_7: 5s;
+  --dir_7: girar-direita;
+  --dire_7: girar-esquerda;
+  --gran_7: 50px;
+  --orb_8: 195px;
+  --plan_8: 20px;
+  --vel_8: 8s;
+  --dir_8: girar-direita;
+  --dire_8: girar-esquerda;
+  --gran_8: 50px;
+  --orb_9: 260px;
+  --plan_9: 30px;
+  --vel_9: 7s;
+  --dir_9: girar-esquerda;
+  --dire_9: girar-direita;
+  --gran_9: 50px;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* =============================================== */
+/* =============================================== */
+#sol {
+  background-color: rgb(0, 173, 116);
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  border-radius: 50%;
+}
+#sol:hover {
+  background-color: rgb(0, 255, 170);
+  height: 160px;
+  width: 160px;
+  left: 50%;
+  top: 50%;
+}
+#sol:hover #saiph {
+  transform: matrix(100%);
+  opacity: 100%;
+}
+
+/* =============================================== */
+/* =============================================== */
+.tutu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* =============================================== */
+/* =============================================== */
+.orbg {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px rgb(0, 27, 17);
+  border-style: solid;
+}
+
+/* =============================================== */
+/* =============================================== */
+@-webkit-keyframes girar-direita {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes girar-direita {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes girar-esquerda {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes girar-esquerda {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* =============================================== */
+/* =============================================== */
+img {
+  height: 80%;
+  width: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#saiph {
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  opacity: 30%;
+  transition-duration: 300ms;
+}
+
+/* =============================================== */
+/* =============================================== */
+.girg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.5px;
+  width: 0.5px;
+  background-color: rgba(128, 255, 0, 0);
+}
+.girg:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.plang {
+  position: fixed;
+  background-color: rgb(0, 201, 134);
+  border-radius: 50%;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* =============================================== */
+/* =============================================== */
+.orb1 {
+  height: var(--orb_1);
+  width: var(--orb_1);
+}
+
+.gir1 {
+  -webkit-animation: var(--dir_1) var(--vel_1) linear infinite;
+          animation: var(--dir_1) var(--vel_1) linear infinite;
+}
+
+.plan1 {
+  height: var(--plan_1);
+  width: var(--plan_1);
+  left: calc(var(--orb_1) / 2 - var(--plan_1) / 2);
+}
+.plan1 img {
+  -webkit-animation: var(--dire_1) var(--vel_1) linear infinite;
+          animation: var(--dire_1) var(--vel_1) linear infinite;
+}
+
+.gir1:hover .plan1 {
+  width: var(--gran_1);
+  height: var(--gran_1);
+  left: calc(var(--orb_1) / 2 - var(--gran_1) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir1:hover .plan1 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb2 {
+  height: var(--orb_2);
+  width: var(--orb_2);
+}
+
+.gir2 {
+  -webkit-animation: var(--dir_2) var(--vel_2) linear infinite;
+          animation: var(--dir_2) var(--vel_2) linear infinite;
+}
+
+.plan2 {
+  height: var(--plan_2);
+  width: var(--plan_2);
+  left: calc(var(--orb_2) / 2 - var(--plan_2) / 2);
+}
+.plan2 img {
+  -webkit-animation: var(--dire_2) var(--vel_2) linear infinite;
+          animation: var(--dire_2) var(--vel_2) linear infinite;
+}
+
+.gir2:hover .plan2 {
+  width: var(--gran_2);
+  height: var(--gran_2);
+  left: calc(var(--orb_2) / 2 - var(--gran_2) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir2:hover .plan2 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb3 {
+  height: var(--orb_3);
+  width: var(--orb_3);
+}
+
+.gir3 {
+  -webkit-animation: var(--dir_3) var(--vel_3) linear infinite;
+          animation: var(--dir_3) var(--vel_3) linear infinite;
+}
+
+.plan3 {
+  height: var(--plan_3);
+  width: var(--plan_3);
+  left: calc(var(--orb_3) / 2 - var(--plan_3) / 2);
+}
+.plan3 img {
+  -webkit-animation: var(--dire_3) var(--vel_3) linear infinite;
+          animation: var(--dire_3) var(--vel_3) linear infinite;
+}
+
+.gir3:hover .plan3 {
+  width: var(--gran_3);
+  height: var(--gran_3);
+  left: calc(var(--orb_3) / 2 - var(--gran_3) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir3:hover .plan3 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb4 {
+  height: var(--orb_4);
+  width: var(--orb_4);
+}
+
+.gir4 {
+  -webkit-animation: var(--dir_4) var(--vel_4) linear infinite;
+          animation: var(--dir_4) var(--vel_4) linear infinite;
+}
+
+.plan4 {
+  height: var(--plan_4);
+  width: var(--plan_4);
+  left: calc(var(--orb_4) / 2 - var(--plan_4) / 2);
+}
+.plan4 img {
+  -webkit-animation: var(--dire_4) var(--vel_4) linear infinite;
+          animation: var(--dire_4) var(--vel_4) linear infinite;
+}
+
+.gir4:hover .plan4 {
+  width: var(--gran_4);
+  height: var(--gran_4);
+  left: calc(var(--orb_4) / 2 - var(--gran_4) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir4:hover .plan4 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb5 {
+  height: var(--orb_5);
+  width: var(--orb_5);
+}
+
+.gir5 {
+  -webkit-animation: var(--dir_5) var(--vel_5) linear infinite;
+          animation: var(--dir_5) var(--vel_5) linear infinite;
+}
+
+.plan5 {
+  height: var(--plan_5);
+  width: var(--plan_5);
+  left: calc(var(--orb_5) / 2 - var(--plan_5) / 2);
+}
+.plan5 img {
+  -webkit-animation: var(--dire_5) var(--vel_5) linear infinite;
+          animation: var(--dire_5) var(--vel_5) linear infinite;
+}
+
+.gir5:hover .plan5 {
+  width: var(--gran_5);
+  height: var(--gran_5);
+  left: calc(var(--orb_5) / 2 - var(--gran_5) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir5:hover .plan5 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb6 {
+  height: var(--orb_6);
+  width: var(--orb_6);
+}
+
+.gir6 {
+  -webkit-animation: var(--dir_6) var(--vel_6) linear infinite;
+          animation: var(--dir_6) var(--vel_6) linear infinite;
+}
+
+.plan6 {
+  height: var(--plan_6);
+  width: var(--plan_6);
+  left: calc(var(--orb_6) / 2 - var(--plan_6) / 2);
+}
+.plan6 img {
+  -webkit-animation: var(--dire_6) var(--vel_6) linear infinite;
+          animation: var(--dire_6) var(--vel_6) linear infinite;
+}
+
+.gir6:hover .plan6 {
+  width: var(--gran_6);
+  height: var(--gran_6);
+  left: calc(var(--orb_6) / 2 - var(--gran_6) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir6:hover .plan6 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb7 {
+  height: var(--orb_7);
+  width: var(--orb_7);
+}
+
+.gir7 {
+  -webkit-animation: var(--dir_7) var(--vel_7) linear infinite;
+          animation: var(--dir_7) var(--vel_7) linear infinite;
+}
+
+.plan7 {
+  height: var(--plan_7);
+  width: var(--plan_7);
+  left: calc(var(--orb_7) / 2 - var(--plan_7) / 2);
+}
+.plan7 img {
+  -webkit-animation: var(--dire_7) var(--vel_7) linear infinite;
+          animation: var(--dire_7) var(--vel_7) linear infinite;
+}
+
+.gir7:hover .plan7 {
+  width: var(--gran_7);
+  height: var(--gran_7);
+  left: calc(var(--orb_7) / 2 - var(--gran_7) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir7:hover .plan7 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb8 {
+  height: var(--orb_8);
+  width: var(--orb_8);
+}
+
+.gir8 {
+  -webkit-animation: var(--dir_8) var(--vel_8) linear infinite;
+          animation: var(--dir_8) var(--vel_8) linear infinite;
+}
+
+.plan8 {
+  height: var(--plan_8);
+  width: var(--plan_8);
+  left: calc(var(--orb_8) / 2 - var(--plan_8) / 2);
+}
+.plan8 img {
+  -webkit-animation: var(--dire_8) var(--vel_8) linear infinite;
+          animation: var(--dire_8) var(--vel_8) linear infinite;
+}
+
+.gir8:hover .plan8 {
+  width: var(--gran_8);
+  height: var(--gran_8);
+  left: calc(var(--orb_8) / 2 - var(--gran_8) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir8:hover .plan8 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.orb9 {
+  height: var(--orb_9);
+  width: var(--orb_9);
+}
+
+.gir9 {
+  -webkit-animation: var(--dir_9) var(--vel_9) linear infinite;
+          animation: var(--dir_9) var(--vel_9) linear infinite;
+}
+
+.plan9 {
+  height: var(--plan_9);
+  width: var(--plan_9);
+  left: calc(var(--orb_9) / 2 - var(--plan_9) / 2);
+}
+.plan9 img {
+  -webkit-animation: var(--dire_9) var(--vel_9) linear infinite;
+          animation: var(--dire_9) var(--vel_9) linear infinite;
+}
+
+.gir9:hover .plan9 {
+  width: var(--gran_9);
+  height: var(--gran_9);
+  left: calc(var(--orb_9) / 2 - var(--gran_9) / 2);
+  background-color: rgb(0, 255, 170);
+}
+.gir9:hover .plan9 img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}/*# sourceMappingURL=main.css.map */

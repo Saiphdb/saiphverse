@@ -1,0 +1,268 @@
+
+
+* {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --tam_pad: 100px;
+
+    --orb_1: 185px;
+    --plan_1: 25px;
+    --vel_1: 4s;
+    --dir_1: girar-direita;
+    --dire_1: girar-esquerda;
+    --gran_1: 70px;
+
+    --orb_2: 270px;
+    --plan_2: 40px;
+    --vel_2: 25s;
+    --dir_2: girar-esquerda;
+    --dire_2: girar-direita;
+    --gran_2: 100px;
+
+    --orb_3: 650px;
+    --plan_3: 60px;
+    --vel_3: 60s;
+    --dir_3: girar-direita;
+    --dire_1: girar-esquerda;
+    --gran_3: 100px;
+
+    --orb_4: 1400px;
+    --plan_4: 40px;
+    --vel_4: 120s;
+    --dir_4: girar-esquerda;
+    --dire_4: girar-direita;
+    --gran_4: 110px;
+
+    --orb_5: 180px;
+    --plan_5: 20px;
+    --vel_5: 40s;
+    --dir_5: girar-esquerda;
+    --dire_5: girar-direita;
+    --gran_5: 70px;
+
+    --orb_6: 230px;
+    --plan_6: 15px;
+    --vel_6: 25s;
+    --dir_6: girar-esquerda;
+    --dire_6: girar-direita;
+    --gran_6: 70px;
+
+    --orb_7: 150px;
+    --plan_7: 20px;
+    --vel_7: 5s;
+    --dir_7: girar-direita;
+    --dire_7: girar-esquerda;
+    --gran_7: 50px;
+
+    --orb_8: 195px;
+    --plan_8: 20px;
+    --vel_8: 8s;
+    --dir_8: girar-direita;
+    --dire_8: girar-esquerda;
+    --gran_8: 50px;
+
+    --orb_9: 260px;
+    --plan_9: 30px;
+    --vel_9: 7s;
+    --dir_9: girar-esquerda;
+    --dire_9: girar-direita;
+    --gran_9: 50px;
+
+  }
+
+
+
+
+
+body{
+
+    background-color: rgb(0, 0, 0);
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+#sol{
+    background-color: rgb(0, 173, 116);
+    height: 80px;
+    width: 80px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+
+    border-radius: 50%;
+
+    &:hover{
+        background-color: rgb(0, 255, 170);
+        height: 160px;
+        width: 160px;
+        left: 50%;
+        top: 50%;
+
+        #saiph {
+            transform: matrix(100%);
+            opacity: 100%;
+        }
+    }
+
+
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+.tutu{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+.orbg {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px rgb(0, 27, 17);
+    border-style: solid;
+}
+
+
+
+
+
+
+
+
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+@keyframes girar-direita{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+@keyframes girar-esquerda{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+img{
+    height: 80%; 
+    width: 80%; 
+    object-fit: contain
+}
+
+
+#saiph{
+    height: 90%; 
+    width: 90%; 
+    border-radius: 50%;
+    opacity: 30%;
+    transition-duration: 300ms;
+}
+
+
+
+/* =============================================== */
+/* =============================================== */
+
+
+
+.girg{
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    height: 0.5px;
+    width: 0.5px;
+    background-color: rgba(128, 255, 0, 0);
+
+
+    &:hover{
+        animation-play-state: paused;
+    }
+}
+
+
+
+.plang{
+    position: fixed;
+
+    background-color: rgb(0, 201, 134);
+    border-radius: 50%;
+
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+
+
+/* =============================================== */
+/* =============================================== */
+
+@for $i from 1 through 9{
+
+.orb#{$i}{
+    height: var(--orb_#{$i});
+    width: var(--orb_#{$i});
+}
+
+    .gir#{$i}{
+        animation: var(--dir_#{$i}) var(--vel_#{$i}) linear infinite;
+}
+
+    .plan#{$i} {
+        height: var(--plan_#{$i});
+        width: var(--plan_#{$i});
+        left: calc(var(--orb_#{$i})/2 - var(--plan_#{$i})/2);
+
+        img {
+            animation: var(--dire_#{$i}) var(--vel_#{$i}) linear infinite;
+        }
+}
+
+    .gir#{$i}:hover .plan#{$i}{
+        width: var(--gran_#{$i});
+        height: var(--gran_#{$i});
+        left: calc(var(--orb_#{$i})/2 - var(--gran_#{$i})/2);
+        background-color: rgb(0, 255, 170);
+
+        img{
+            animation-play-state: paused;
+        }
+}}
